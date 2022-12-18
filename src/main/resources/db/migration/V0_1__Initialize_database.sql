@@ -13,9 +13,14 @@ create table player(
 
 create table sponsor(
     id serial primary key,
-    name varchar not null,
+    name varchar not null
+);
+
+create table have_sponsor(
     team_id int
-        constraint sponsor_team_id references team(id)
+        constraint team_id_have_sponsor_fk references team(id),
+    sponsor_id int
+        constraint sponsor_id_fk references sponsor(id)
 );
 
 create table match(
