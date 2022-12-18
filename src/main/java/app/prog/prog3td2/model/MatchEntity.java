@@ -1,7 +1,6 @@
 package app.prog.prog3td2.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,7 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.Instant;
 
 @Entity
 @Table(name = "match")
@@ -36,7 +35,7 @@ public class MatchEntity {
     @JoinColumn(name = "away_team_id")
     private TeamEntity awayTeam;
 
-    private LocalDate datetime;
+    private Instant datetime;
 
     private String stadium;
 }

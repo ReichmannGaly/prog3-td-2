@@ -328,8 +328,6 @@ components:
         datetime:
           type: string
           format: date
-        stadium:
-          type: string
     Match:
       type: object
       properties:

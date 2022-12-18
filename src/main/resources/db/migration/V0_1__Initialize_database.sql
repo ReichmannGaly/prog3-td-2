@@ -29,6 +29,6 @@ create table match(
     constraint home_team_id_fk references team(id),
   away_team_id int
     constraint away_team_id_fk references team(id),
-  datetime date not null,
+  datetime timestamp with time zone not null,
   stadium varchar
 );

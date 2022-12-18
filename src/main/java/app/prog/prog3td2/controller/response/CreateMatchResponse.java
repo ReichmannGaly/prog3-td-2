@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
+import java.time.Instant;
 
 @Component
 @Builder
@@ -16,6 +16,5 @@ import java.time.LocalDate;
 public class CreateMatchResponse {
     private UpdateTeamResponse homeTeam;
     private UpdateTeamResponse awayTeam;
-    private LocalDate datetime;
-    private String stadium;
+    private Instant datetime;
 }

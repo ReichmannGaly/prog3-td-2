@@ -21,7 +21,6 @@ public class MatchRestMapper {
                 .homeTeam(homeTeam)
                 .awayTeam(awayTeam)
                 .datetime(domain.getDatetime())
-                .stadium(domain.getStadium())
                 .build();
     }
 
@@ -32,7 +31,6 @@ public class MatchRestMapper {
                 .homeTeam(domainHomeTeam)
                 .awayTeam(domainAwayTeam)
                 .datetime(rest.getDatetime())
-                .stadium(rest.getStadium())
                 .build();
     }
 
@@ -43,7 +41,6 @@ public class MatchRestMapper {
                 .homeTeam(domainHomeTeam)
                 .awayTeam(domainAwayTeam)
                 .datetime(rest.getDatetime())
-                .stadium(rest.getStadium())
                 .build();
     }
 }

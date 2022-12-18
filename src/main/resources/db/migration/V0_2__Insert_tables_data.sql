@@ -37,7 +37,7 @@ insert into have_sponsor(team_id,sponsor_id) values
 ;
 
 insert into match(home_team_id,away_team_id,datetime,stadium) values
-    (1,3,'2023-01-12','Camp Nou'),
-    (4,5,'2023-01-15','Etihad Stadium'),
-    (3,2,'2023-02-18','Parc Des Princes')
+    (1,3,'2023-01-12T20:25:24.00Z','Camp Nou'),
+    (4,5,'2023-01-15T20:25:24.00Z','Etihad Stadium'),
+    (3,2,'2023-02-18T20:25:24.00Z','Parc Des Princes')
 ;
