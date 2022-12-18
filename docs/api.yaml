@@ -193,6 +193,67 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Sponsor'
+  /matches:
+    get:
+      tags:
+        - Matches
+      summary: get all matches
+      operationId: getMatches
+      responses:
+        '200':
+          description: List of matches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Match'
+        '500':
+          description: Internal server error
+    post:
+      tags:
+        - Matches
+      summary: crete new matches
+      operationId: createMatches
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/CreateMatch'
+      responses:
+        '200':
+          description: List of created players
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Match'
+        '500':
+          description: Internal server error
+    put:
+      tags:
+        - Matches
+      summary: update matches
+      operationId: updateMatches
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Match'
+      responses:
+        '200':
+          description: List of created matches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Match'
 components:
   schemas:
     CreateSponsor:
@@ -253,3 +314,26 @@ components:
               - $ref: '#/components/schemas/Sponsor'
       allOf:
         - $ref: '#/components/schemas/CreateTeam'
+    CreateMatch:
+      type: object
+      properties:
+        homeTeam:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/Team'
+        awayTeam:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/Team'
+        datetime:
+          type: string
+          format: date
+        stadium:
+          type: string
+    Match:
+      type: object
+      properties:
+        id:
+          type: integer
+      allOf:
+        - $ref: '#/components/schemas/CreateMatch'
