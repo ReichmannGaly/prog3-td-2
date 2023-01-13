@@ -273,6 +273,9 @@ components:
       properties:
         name:
           type: string
+        isGoalkeeper:
+          type: boolean
+          example: false
     Player:
       type: object
       properties:
@@ -314,6 +317,19 @@ components:
               - $ref: '#/components/schemas/Sponsor'
       allOf:
         - $ref: '#/components/schemas/CreateTeam'
+    Goals:
+      properties:
+        id:
+          type: integer
+        matchId:
+          type: integer
+        player:
+          allOf:
+            - $ref: '#/components/schemas/Player'
+        scoringTime:
+          type: integer
+        isOG:
+          type: boolean
     CreateMatch:
       type: object
       properties:
@@ -331,6 +347,15 @@ components:
     Match:
       type: object
       properties:
+        goals:
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/Goals'
+        homeTeamScore:
+          type: integer
+        awayTeamScore:
+          type: integer
         id:
           type: integer
       allOf:
